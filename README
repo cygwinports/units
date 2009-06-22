@@ -1,0 +1,65 @@
+units
+------------------------------------------
+The Units program converts quantities expressed in various scales to 
+their equivalents in other scales. The units program can handle 
+multiplicative scale changes as well as nonlinear conversions such as 
+Fahrenheit to Celsius or wire gauge. Units comes with an annotated, 
+extendable database defining over two thousand units.
+
+Runtime requirements:
+  cygwin-1.7.0-49
+  libgcc1-4.3.2-2
+  libreadline6-5.2.13-11
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf2.5-2.63-10
+  binutils-20080624-2
+  cygport-0.9.7-1
+  gawk-3.1.6-2
+  gcc4-core-4.3.2-2
+  make-3.81-2
+  sed-4.1.5-2
+
+Canonical website:
+  http://www.gnu.org/software/units/
+
+Canonical download:
+  ftp://ftp.gnu.org/gnu/units/
+
+-------------------------------------------
+
+Build instructions:
+  unpack units-1.87-X-src.tar.bz2
+    if you use setup to install this src package, it will be
+	 unpacked under /usr/src automatically
+  cd /usr/src
+  cygport ./units-1.87-X.cygport all
+
+This will create:
+  /usr/src/units-1.87-X-src.tar.bz2
+  /usr/src/units-1.87-X.tar.bz2
+
+-------------------------------------------
+
+Files included in the binary package:
+
+  /usr/bin/units.exe
+  /usr/share/doc/units/COPYING
+  /usr/share/doc/units/ChangeLog
+  /usr/share/doc/units/NEWS
+  /usr/share/doc/units/README
+  /usr/share/info/units.info.gz
+  /usr/share/man/man1/units.1.gz
+  /usr/share/units/units.dat
+
+------------------
+
+Port Notes:
+
+----- version 1.87-1 -----
+Initial release for Cygwin 1.7.
+
+
+Cygwin port maintained by:
+http://sourceware.org/cygwinports/
