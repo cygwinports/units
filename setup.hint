@@ -1,8 +1,0 @@
-category: Math
-requires: libgcc1 libreadline6
-sdesc: "Console unit convertor"
-ldesc: "The Units program converts quantities expressed in various 
-scales to their equivalents in other scales. The units program can 
-handle multiplicative scale changes as well as nonlinear conversions 
-such as Fahrenheit to Celsius or wire gauge. Units comes with an 
-annotated, extendable database defining over two thousand units."
