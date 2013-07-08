@@ -1,6 +1,6 @@
 NAME="units"
 VERSION=2.01
-RELEASE=1
+RELEASE=2
 CATEGORY="Math"
 SUMMARY="Console unit converter"
 DESCRIPTION="The Units program converts quantities expressed in various scales
@@ -10,7 +10,16 @@ Fahrenheit to Celsius or wire gauge. Units comes with an annotated, extendable
 database defining over two thousand units."
 HOMEPAGE="http://www.gnu.org/software/units/"
 SRC_URI="mirror://gnu/units/units-${VERSION}.tar.gz"
-PATCH_URI="2.01-vpath.patch"
+PATCH_URI="
+	2.01-units_cur.patch
+	2.01-vpath.patch
+"
+
+CYGPORT_USE_UNSTABLE_API=1
+src_patch_hook() {
+	# update currency.units
+	./units_cur
+}
 
 src_install() {
 	cd ${B}
