@@ -9,12 +9,11 @@ multiplicative scale changes as well as nonlinear conversions such as
 Fahrenheit to Celsius or wire gauge. Units comes with an annotated, extendable
 database defining over two thousand units."
 HOMEPAGE="http://www.gnu.org/software/units/"
-SRC_URI="mirror://gnu/${PN}/${P}.tar.gz"
-
-# the trailing slash is required
-CYGCONF_ARGS="--datadir=/usr/share/${PN}/"
+SRC_URI="mirror://gnu/units/units-${VERSION}.tar.gz"
+PATCH_URI="2.01-vpath.patch"
 
 src_install() {
 	cd ${B}
+	# mkinstalldirs calls are not parallel-safe
 	cyginstall -j1
 }
