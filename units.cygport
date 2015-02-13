@@ -1,6 +1,8 @@
+inherit python3
+
 NAME="units"
-VERSION=2.01
-RELEASE=2
+VERSION=2.11
+RELEASE=1
 CATEGORY="Math"
 SUMMARY="Console unit converter"
 DESCRIPTION="The Units program converts quantities expressed in various scales
@@ -10,16 +12,16 @@ Fahrenheit to Celsius or wire gauge. Units comes with an annotated, extendable
 database defining over two thousand units."
 HOMEPAGE="http://www.gnu.org/software/units/"
 SRC_URI="mirror://gnu/units/units-${VERSION}.tar.gz"
-PATCH_URI="
-	2.01-units_cur.patch
-	2.01-vpath.patch
-"
+
+DEPEND="python3-unidecode"
 
 CYGPORT_USE_UNSTABLE_API=1
 src_patch_hook() {
 	# update currency.units
-	./units_cur
+	${PYTHON3} ./units_cur3
 }
+
+CYGCONF_ARGS="PYTHON=${PYTHON3}"
 
 src_install() {
 	cd ${B}
