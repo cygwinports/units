@@ -1,7 +1,7 @@
 inherit python3
 
 NAME="units"
-VERSION=2.11
+VERSION=2.12
 RELEASE=1
 CATEGORY="Math"
 SUMMARY="Console unit converter"
