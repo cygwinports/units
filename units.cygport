@@ -1,7 +1,7 @@
 inherit python3
 
 NAME="units"
-VERSION=2.12
+VERSION=2.13
 RELEASE=1
 CATEGORY="Math"
 SUMMARY="Console unit converter"
@@ -27,4 +27,9 @@ src_install() {
 	cd ${B}
 	# mkinstalldirs calls are not parallel-safe
 	cyginstall -j1
+
+	dodir /etc/postinstall
+	cat > ${D}/etc/postinstall/zp_units_cur.sh <<_EOF
+/usr/bin/find /usr/share/units/currency.units -mtime +0 -exec /usr/bin/units_cur \;
+_EOF
 }
